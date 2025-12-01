@@ -1,10 +1,10 @@
 {
   "roots": [
-    "profil_kampus_universitas_muhammadiyah_bandung"
+    "profil_kampus_Universitas_Muhammadiyah_Bandung"
   ],
   "packages": [
     {
-      "name": "profil_kampus_universitas_muhammadiyah_bandung",
+      "name": "profil_kampus_Universitas_Muhammadiyah_Bandung",
       "version": "1.0.0+1",
       "dependencies": [
         "carousel_slider",

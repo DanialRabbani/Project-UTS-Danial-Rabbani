@@ -1,0 +1,46 @@
+name: profil_kampus_Universitas_Muhammadiyah_Bandung
+description: Aplikasi Flutter sederhana dengan tema Profil Kampus.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  carousel_slider: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  url_launcher: ^6.2.5
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/features-3.png
+    - assets/rektor_crop.png
+    - assets/logo-umb.png
+    - assets/logo.png
+    - assets/logoputih.png
+    - assets/gedung.png
+    - assets/auditorium.png
+    - assets/kelas.png
+    - assets/perpus.png
+    - assets/musala.png
+    - assets/lab-komputer.png
+    - assets/opieun.png
+    - assets/lab-biologi.png
+    - assets/lab-biotek.png
+    - assets/lab-elektro.png
+    - assets/lab-farmasetika.png
+    - assets/lab-ilkom.png
+    - assets/lab-informatika.png
+    - assets/lab-kimia.png
+    - assets/lab-kpi.png

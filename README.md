@@ -1,155 +1,158 @@
-# 📱 Project UTS – Aplikasi Profil Kampus Universitas Muhammadiyah Bandung
+# 📘 **Aplikasi Profil Kampus Universitas Muhammadiyah Bandung**
 
-Dibuat oleh **Danial Rabbani**
+Aplikasi Flutter yang menampilkan informasi resmi mengenai Universitas Muhammadiyah Bandung (UMBandung).
+Dibangun sebagai tugas UTS mata kuliah **Pemrograman Perangkat Bergerak (PPB)**.
 
-Aplikasi ini merupakan proyek UTS Pemrograman Mobile yang menampilkan **profil kampus UMBandung** secara interaktif, informatif, dan responsif. Aplikasi dibangun menggunakan **Flutter**, dengan fokus pada pengalaman pengguna, animasi ringan, serta navigasi yang mudah.
+Aplikasi ini menyediakan halaman profil kampus yang modern, responsif, dan mudah digunakan, dengan navigasi antar halaman serta integrasi tautan eksternal menggunakan `url_launcher`.
 
 ---
 
-## 🚀 **Fitur Utama Aplikasi**
+## 📱 **Fitur Utama**
 
-### 1️⃣ **Halaman Home**
+### **1. Halaman Grid Informasi (Home)**
 
-Menampilkan beberapa kartu informasi menggunakan **GridView**:
+Menampilkan beberapa kartu informasi utama kampus:
 
 * **Sejarah UMBandung**
 * **Visi & Misi**
 * **Fasilitas Kampus**
-* **PMB Online** (langsung membuka link pmb.um-bandung.ac.id dengan `launchUrl`)
-* **Lokasi Kampus** (langsung membuka Google Maps)
+* **PMB Online (Ayo Daftar Sekarang)**
+* **Lokasi Kampus**
 
-Setiap kartu dilengkapi:
-
-* Efek **AnimatedScale** saat disentuh
-* **Border animasi** untuk memberi kesan interaktif
-* Navigasi ke halaman detail
-* Khusus PMB & Lokasi, kartu langsung membuka URL eksternal
+Setiap kartu dibuat menggunakan **Widget Kustom `KartuInformasi`** dan ditampilkan dalam **GridView** agar responsif di berbagai ukuran layar.
 
 ---
 
-## 2️⃣ **Halaman Detail**
+### **2. Halaman Sejarah**
 
-Terdiri dari dua halaman:
+Menampilkan:
 
-* **HalamanDetailSejarah**
-* **HalamanDetailVisiMisi**
-
-Masing-masing menampilkan:
-
-* **Slider gambar**
-* **Judul halaman**
-* **Deskripsi lengkap**
-* **Tata letak responsif** dengan `header_responsif` (widget custom)
+* Judul halaman
+* Deskripsi sejarah kampus
+* Tulisan **"Tentang Kami"** di bagian atas sesuai kebutuhan
+* Tampilan teks yang rapi dengan line-height yang nyaman dibaca
 
 ---
 
-## 3️⃣ **Fasilitas Kampus**
+### **3. Halaman Visi & Misi**
 
-* Daftar fasilitas ditampilkan menggunakan **GridView**
-* Setiap foto memiliki efek:
+Menampilkan:
 
-  * **Zoom-in** saat cursor/klik
-  * Overlay tulisan fasilitas
-  * Nama fasilitas tetap tampil di bawah gambar
-
----
-
-## 4️⃣ **Lokasi Kampus**
-
-* Kartu khusus lokasi menampilkan alamat lengkap
-* Ketika diklik → langsung membuka **Google Maps** melalui `launchUrl()`
+* Visi resmi kampus
+* Daftar misi
+* Penataan teks responsif dan bersih
 
 ---
 
-## 🧩 **Struktur Folder Project**
+### **4. Halaman Fasilitas Kampus**
+
+Menampilkan daftar fasilitas seperti:
+
+* Ruang kelas
+* Laboratorium
+* Perpustakaan
+* Area umum
+* Fasilitas pendukung mahasiswa
+
+---
+
+### **5. PMB Online**
+
+Kartu khusus bertuliskan **"Ayo Daftar ke UMBandung"** yang ketika diklik langsung membuka halaman PMB resmi menggunakan:
+
+```
+launchUrl(
+  Uri.parse("https://pmb.umbandung.ac.id"),
+  mode: LaunchMode.externalApplication,
+);
+```
+
+---
+
+### **6. Lokasi Kampus (Google Maps)**
+
+Fitur:
+
+* Menampilkan alamat lengkap
+* Saat kartu diklik langsung membuka Google Maps menggunakan `url_launcher`
+* Dibuat dengan animasi `AnimatedScale` untuk efek interaktif
+
+---
+
+## 🧩 **Struktur Folder**
 
 ```
 lib/
- ├── screens/
- │    ├── halaman_home.dart
- │    ├── halaman_detail_sejarah.dart
- │    ├── halaman_detail_visimisi.dart
- │    ├── halaman_grid.dart
- │
- ├── widgets/
- │    ├── header_responsif.dart
- │    ├── kartu_informasi.dart
- │
- └── main.dart
+│
+├── screens/
+│   ├── halaman_home.dart
+│   ├── halaman_detail.dart
+│   └── halaman_grid.dart
+│
+└── widgets/
+    ├── header_responsif.dart
+    └── kartu_informasi.dart
 ```
 
 ---
 
-## 🛠️ **Teknologi & Widget yang Digunakan**
+## 🛠 **Teknologi yang Digunakan**
 
-### 🔹 **GridView**
-
-Digunakan pada Home untuk membuat layout kartu informasi yang rapi dan responsif.
-
-### 🔹 **AnimatedScale**
-
-Memberikan efek zoom saat kartu disentuh → membuat UI terasa interaktif meski di emulator Android tanpa mouse.
-
-### 🔹 **InkWell + Material**
-
-Memberikan efek ripple ketika tombol/kartu ditekan.
-
-### 🔹 **launchUrl (url_launcher)**
-
-Digunakan untuk:
-
-* Membuka PMB Online
-* Membuka Google Maps
-
-### 🔹 **Custom Widgets**
-
-* `header_responsif` → header dengan ukuran otomatis menyesuaikan layar
-* `kartu_informasi` → UI kartu modular yang bisa dipakai ulang
-
-### 🔹 **PageView / Carousel (Slider Gambar)**
-
-Dipakai di halaman detail sejarah dan visi misi.
+* **Flutter** (SDK terbaru)
+* **Dart**
+* **Material Design Components**
+* **GridView** → menampilkan menu utama
+* **AnimatedScale** → efek animasi saat kartu ditekan
+* **InkWell** → interaksi tap dengan efek splash
+* **Navigator.push()** → berpindah halaman
+* **url_launcher** → membuka tautan ke browser / Maps
 
 ---
 
-## 📷 **Preview Aplikasi**
+## 📦 **Dependencies**
 
-*(Tambahkan screenshot jika diperlukan)*
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  url_launcher: ^6.2.6
+```
 
 ---
 
-## 🧑‍💻 **Cara Menjalankan Project**
+## 📂 **Cara Menjalankan Proyek**
 
 1. Clone repository:
 
-   ```
-   git clone https://github.com/DanialRabbani/Project-UTS-Danial-Rabbani.git
-   ```
-2. Masuk ke folder:
+```sh
+git clone https://github.com/DanialRabbani/Project-UTS-Danial-Rabbani
+```
 
-   ```
-   cd Project-UTS-Danial-Rabbani
-   ```
-3. Install package:
+2. Masuk ke folder project:
 
-   ```
-   flutter pub get
-   ```
+```sh
+cd Project-UTS-Danial-Rabbani
+```
+
+3. Install dependency:
+
+```sh
+flutter pub get
+```
+
 4. Jalankan aplikasi:
 
-   ```
-   flutter run
-   ```
+```sh
+flutter run
+```
 
 ---
 
-## 📄 **Lisensi**
+## ✍️ **Author**
 
-Project ini dibuat untuk keperluan UTS dan bebas digunakan untuk pembelajaran.
-
----
-
-## ✨ Terima Kasih
-
-Terima kasih telah melihat repository ini!
-Jika ada pengembangan lanjutan atau penambahan fitur, silakan lakukan pull request.
+Nama  : **Danial Rabbani**
+Prodi : Teknik Informatika
+NIM   : 220102022
+Universitas Muhammadiyah Bandung

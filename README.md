@@ -150,9 +150,9 @@ flutter run
 
 ---
 
-✍️ Author
+## ✍️ Author
 
-Nama : Danial Rabbani
-Prodi : Teknik Informatika
-NIM : 220102022
-Universitas Muhammadiyah Bandung
+**Nama** : Danial Rabbani  
+**Prodi** : Teknik Informatika  
+**NIM** : 220102022  
+**Universitas** : Universitas Muhammadiyah Bandung

@@ -152,7 +152,7 @@ flutter run
 
 ## ✍️ Author
 
-**Nama** : Danial Rabbani  
+**Nama** : Danial Rabbani Wicipta Sudrajat  
 **Prodi** : Teknik Informatika  
 **NIM** : 220102022  
 **Universitas** : Universitas Muhammadiyah Bandung
